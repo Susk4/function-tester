@@ -1,19 +1,17 @@
-import React from "react";
 import { Collapse, Space } from "antd";
-import { Typography } from "antd";
 import { Button } from "antd";
 import PrimaryTests from "./PrimaryTests/PrimaryTests";
+import AdditionalTests from "./AdditionalTests/AdditionalTests";
 const { Panel } = Collapse;
-const { Title } = Typography;
 
 export function FunctionTester({ fn, input, output, tests, onFinish }) {
-  console.log(fn);
+  /* console.log(fn);
   console.log(input);
   console.log(output);
-  console.log(tests);
+  console.log(tests); */
 
   const onChange = (key) => {
-    console.log(key);
+    //console.log(key);
   };
   return (
     <Space direction="vertical" size="middle" style={{ display: "flex", padding: "8px" }}>
@@ -32,11 +30,7 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
           <PrimaryTests testList={tests} fn={fn} />
         </Panel>
         <Panel header="További tesztesetek" key="3">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, delectus assumenda facere cum
-            perferendis nihil recusandae, nesciunt sit ipsum quia magni mollitia. Neque placeat a doloremque quam
-            molestiae. Ad, tempore.
-          </p>
+          <AdditionalTests input={input} testList={tests} fn={fn} />
         </Panel>
       </Collapse>
 
